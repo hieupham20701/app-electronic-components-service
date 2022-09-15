@@ -31,7 +31,6 @@ public class Image {
 	private Brand brand;
 
 	public Image() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {

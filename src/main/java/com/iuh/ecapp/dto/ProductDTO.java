@@ -4,6 +4,7 @@ import com.iuh.ecapp.entity.Brand;
 import com.iuh.ecapp.entity.Category;
 import com.iuh.ecapp.entity.Discount;
 import java.util.Date;
+import java.util.List;
 
 public class ProductDTO {
     private int id;
@@ -18,7 +19,7 @@ public class ProductDTO {
     private Category category;
     private Brand brand;
     private Discount discount;
-
+    private List<ImageDTO> imageDTOs;
     public ProductDTO() {
     }
 
@@ -114,6 +115,15 @@ public class ProductDTO {
 
     public void setDiscount(Discount discount) {
         this.discount = discount;
+    }
+
+    public List<ImageDTO> getImageDTOs() {
+
+        return imageDTOs;
+    }
+
+    public void setImageDTOs(List<ImageDTO> imageDTOs) {
+        this.imageDTOs = imageDTOs;
     }
 
     @Override

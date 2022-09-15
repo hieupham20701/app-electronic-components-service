@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ImageService {
-   Image saveImage(String employeeId, MultipartFile file) throws IOException;
+   Image saveImage(String productId, String brandId, String type, MultipartFile file) throws IOException;
    Optional<Image> getImageById(int id);
 
    List<Image> getImageByProductId(int id);

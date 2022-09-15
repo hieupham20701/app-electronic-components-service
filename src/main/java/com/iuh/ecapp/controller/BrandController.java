@@ -5,6 +5,7 @@ import com.iuh.ecapp.dto.BrandDTO;
 import com.iuh.ecapp.entity.Brand;
 import com.iuh.ecapp.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,13 +25,13 @@ public class BrandController {
     @Autowired
     private ConvertBrandDTO convertBrandDTO;
     @GetMapping
-    public List<BrandDTO> getBrands(){
+    public ResponseEntity<List<BrandDTO>> getBrands(){
         List<Brand> brands = brandService.getBrands();
         List<BrandDTO> brandDTOS = new ArrayList<>();
         for(Brand brand : brands){
             brandDTOS.add(convertBrandDTO.convertBrandDTO(brand));
         }
-        return brandDTOS;
+        return ResponseEntity.ok().body(brandDTOS);
     }
 
 }

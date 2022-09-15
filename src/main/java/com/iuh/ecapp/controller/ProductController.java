@@ -6,6 +6,7 @@ import com.iuh.ecapp.entity.Product;
 import com.iuh.ecapp.service.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,13 +26,13 @@ public class ProductController {
     @Autowired
     private ConvertProductDTO convertProductDTO;
     @GetMapping
-    public List<ProductDTO> getProducts(){
+    public ResponseEntity<List<ProductDTO>> getProducts(){
         List<Product> products = productService.getAllProducts();
         List<ProductDTO> productDTOS = new ArrayList<>();
         for(Product product : products){
             productDTOS.add(convertProductDTO.convertProductDTO(product));
         }
-        return productDTOS;
+        return ResponseEntity.ok().body(productDTOS);
     }
 
 }
