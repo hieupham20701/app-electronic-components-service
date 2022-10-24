@@ -14,7 +14,7 @@ public class ConverterImageDTO {
         ImageDTO imageDTO = new ImageDTO();
         imageDTO.setId(image.getId());
         imageDTO.setType(image.getType());
-        imageDTO.setUrl(ServletUriComponentsBuilder.fromCurrentContextPath().path("/images/").path(image.getId() + "")
+        imageDTO.setUrl(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/images/").path(image.getId() + "")
                 .toUriString());
         return imageDTO;
     }

@@ -2,6 +2,7 @@ package com.iuh.ecapp.controller;
 
 import com.iuh.ecapp.converter.ConvertProductDTO;
 import com.iuh.ecapp.dto.ProductDTO;
+import com.iuh.ecapp.entity.Image;
 import com.iuh.ecapp.entity.Product;
 import com.iuh.ecapp.service.ProductService;
 import org.modelmapper.ModelMapper;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -27,11 +29,15 @@ public class ProductController {
     private ConvertProductDTO convertProductDTO;
     @GetMapping
     public ResponseEntity<List<ProductDTO>> getProducts(){
-        List<Product> products = productService.getAllProducts();
+        Map<Product, List<Image>> products = productService.getAllProducts();
+
         List<ProductDTO> productDTOS = new ArrayList<>();
-        for(Product product : products){
-            productDTOS.add(convertProductDTO.convertProductDTO(product));
-        }
+        products.entrySet().forEach( entry->{
+            Product product = entry.getKey();
+            List<Image> images = entry.getValue();
+            ProductDTO productDTO = convertProductDTO.convertProductDTO(product, images);
+            productDTOS.add(productDTO);
+        });
         return ResponseEntity.ok().body(productDTOS);
     }
 

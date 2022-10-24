@@ -45,7 +45,6 @@ public class ImageController {
     @GetMapping("/{id}")
     public ResponseEntity<byte[]> getFileImageById(@PathVariable int id) {
         Optional<Image> image = imageService.getImageById(id);
-//        image.orElseThrow(()-> return ResponseEntity.status(Ht));
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + image.get().getFileType() + "\"")
                 .body(image.get().getFile());
