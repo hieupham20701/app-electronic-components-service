@@ -1,6 +1,6 @@
 package com.iuh.ecapp.repository;
 
-import com.iuh.ecapp.entity.Image;
+import com.iuh.ecapp.model.entity.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

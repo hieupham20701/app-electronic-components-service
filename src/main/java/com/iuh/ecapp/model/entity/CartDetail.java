@@ -1,4 +1,4 @@
-package com.iuh.ecapp.entity;
+package com.iuh.ecapp.model.entity;
 
 import java.util.Date;
 
@@ -7,48 +7,37 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order_detail")
-public class OrderDetail {
+@Table(name = "cart_detail")
+public class CartDetail {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
 	@ManyToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
 
 	@ManyToOne
-	@JoinColumn(name = "order_id")
-	private Order order;
-
-	@Column(name = "created_date")
-	private Date createdDate;
-	@Column(name = "modified_date")
-	private Date modifiedDate;
+	@JoinColumn(name = "session_id")
+	private ShoppingSession shoppingSession;
 
 	@Column(name = "quantity")
 	private int quantity;
+	@Column(name = "created_date")
+	private Date createdDate;
 
-	public OrderDetail() {
+	@Column(name = "modified_date")
+	private Date modifiedDate;
+
+	public CartDetail() {
 		// TODO Auto-generated constructor stub
 	}
-
-	
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 
 	public Product getProduct() {
 		return product;
@@ -58,12 +47,20 @@ public class OrderDetail {
 		this.product = product;
 	}
 
-	public Order getOrder() {
-		return order;
+	public ShoppingSession getShoppingSession() {
+		return shoppingSession;
 	}
 
-	public void setOrder(Order order) {
-		this.order = order;
+	public void setShoppingSession(ShoppingSession shoppingSession) {
+		this.shoppingSession = shoppingSession;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public Date getCreatedDate() {
@@ -82,12 +79,8 @@ public class OrderDetail {
 		this.modifiedDate = modifiedDate;
 	}
 
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public int getId() {
+		return id;
 	}
 
 }

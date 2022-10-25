@@ -2,8 +2,8 @@ package com.iuh.ecapp.converter;
 
 import com.iuh.ecapp.dto.ImageDTO;
 import com.iuh.ecapp.dto.ProductDTO;
-import com.iuh.ecapp.entity.Image;
-import com.iuh.ecapp.entity.Product;
+import com.iuh.ecapp.model.entity.Image;
+import com.iuh.ecapp.model.entity.Product;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

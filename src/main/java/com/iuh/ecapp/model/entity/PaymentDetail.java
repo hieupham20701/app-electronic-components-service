@@ -1,4 +1,4 @@
-package com.iuh.ecapp.entity;
+package com.iuh.ecapp.model.entity;
 
 import java.util.Date;
 
@@ -12,55 +12,68 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cart_detail")
-public class CartDetail {
-
+@Table(name = "payment_detail")
+public class PaymentDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@ManyToOne
-	@JoinColumn(name = "product_id")
-	private Product product;
-
-	@ManyToOne
-	@JoinColumn(name = "session_id")
-	private ShoppingSession shoppingSession;
-
-	@Column(name = "quantity")
-	private int quantity;
+	@JoinColumn(name = "order_id")
+	private Order order;
+	@Column(name = "amount")
+	private int amount;
+	@Column(name = "provider")
+	private String provider;
+	@Column(name = "status")
+	private String status;
 	@Column(name = "created_date")
 	private Date createdDate;
-
 	@Column(name = "modified_date")
 	private Date modifiedDate;
 
-	public CartDetail() {
+	public PaymentDetail() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product getProduct() {
-		return product;
+	public int getId() {
+		return id;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public ShoppingSession getShoppingSession() {
-		return shoppingSession;
+	public Order getOrder() {
+		return order;
 	}
 
-	public void setShoppingSession(ShoppingSession shoppingSession) {
-		this.shoppingSession = shoppingSession;
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
-	public int getQuantity() {
-		return quantity;
+	public int getAmount() {
+		return amount;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public String getProvider() {
+		return provider;
+	}
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public Date getCreatedDate() {
@@ -77,10 +90,6 @@ public class CartDetail {
 
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
-	}
-
-	public int getId() {
-		return id;
 	}
 
 }

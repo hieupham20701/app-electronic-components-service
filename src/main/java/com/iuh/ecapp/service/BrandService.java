@@ -1,6 +1,6 @@
 package com.iuh.ecapp.service;
 
-import com.iuh.ecapp.entity.Brand;
+import com.iuh.ecapp.model.entity.Brand;
 
 import java.util.List;
 

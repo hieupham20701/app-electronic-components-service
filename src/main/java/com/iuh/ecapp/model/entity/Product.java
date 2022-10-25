@@ -1,4 +1,4 @@
-package com.iuh.ecapp.entity;
+package com.iuh.ecapp.model.entity;
 
 import java.util.Date;
 import java.util.List;

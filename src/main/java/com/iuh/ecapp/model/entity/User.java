@@ -1,13 +1,21 @@
-package com.iuh.ecapp.entity;
+package com.iuh.ecapp.model.entity;
 
-import java.util.Collection;
+import com.iuh.ecapp.model.enums.UserRole;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 	
 	@Id
@@ -27,11 +35,11 @@ public class User {
 	private String address;
 	@Column(name = "telephone")
 	private String telephone;
-	@Column(name = "role")
-	private String role;
 	@Column(name = "create_date")
 	private Date createdDate;
 	@Column(name = "modified_date")
 	private Date modifiedDate;
-
+	@Enumerated(EnumType.STRING)
+	private UserRole role;
+	private String avatar;
 }

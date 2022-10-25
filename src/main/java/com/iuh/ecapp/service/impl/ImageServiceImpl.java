@@ -1,6 +1,6 @@
 package com.iuh.ecapp.service.impl;
 
-import com.iuh.ecapp.entity.Image;
+import com.iuh.ecapp.model.entity.Image;
 import com.iuh.ecapp.repository.BrandRepository;
 import com.iuh.ecapp.repository.ImageRepository;
 import com.iuh.ecapp.repository.ProductRepository;

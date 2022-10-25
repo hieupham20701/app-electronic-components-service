@@ -1,6 +1,6 @@
 package com.iuh.ecapp.service;
 
-import com.iuh.ecapp.entity.Image;
+import com.iuh.ecapp.model.entity.Image;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;

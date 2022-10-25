@@ -1,4 +1,4 @@
-package com.iuh.ecapp.entity;
+package com.iuh.ecapp.model.entity;
 
 import java.util.Date;
 
@@ -12,36 +12,49 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "payment_detail")
-public class PaymentDetail {
+@Table(name = "order_detail")
+public class OrderDetail {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@ManyToOne
+	@JoinColumn(name = "product_id")
+	private Product product;
 
 	@ManyToOne
 	@JoinColumn(name = "order_id")
 	private Order order;
-	@Column(name = "amount")
-	private int amount;
-	@Column(name = "provider")
-	private String provider;
-	@Column(name = "status")
-	private String status;
+
 	@Column(name = "created_date")
 	private Date createdDate;
 	@Column(name = "modified_date")
 	private Date modifiedDate;
 
-	public PaymentDetail() {
+	@Column(name = "quantity")
+	private int quantity;
+
+	public OrderDetail() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public int getId() {
 		return id;
 	}
 
+
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	public Order getOrder() {
@@ -50,30 +63,6 @@ public class PaymentDetail {
 
 	public void setOrder(Order order) {
 		this.order = order;
-	}
-
-	public int getAmount() {
-		return amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-
-	public String getProvider() {
-		return provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public Date getCreatedDate() {
@@ -90,6 +79,14 @@ public class PaymentDetail {
 
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 }

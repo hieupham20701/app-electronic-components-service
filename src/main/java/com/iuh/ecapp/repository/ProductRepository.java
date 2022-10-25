@@ -1,6 +1,6 @@
 package com.iuh.ecapp.repository;
 
-import com.iuh.ecapp.entity.Product;
+import com.iuh.ecapp.model.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

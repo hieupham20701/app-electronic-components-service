@@ -1,7 +1,7 @@
 package com.iuh.ecapp.controller;
 
 import com.iuh.ecapp.converter.ConverterImageDTO;
-import com.iuh.ecapp.entity.Image;
+import com.iuh.ecapp.model.entity.Image;
 import com.iuh.ecapp.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

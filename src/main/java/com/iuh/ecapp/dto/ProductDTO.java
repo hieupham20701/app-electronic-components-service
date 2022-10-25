@@ -1,8 +1,8 @@
 package com.iuh.ecapp.dto;
 
-import com.iuh.ecapp.entity.Brand;
-import com.iuh.ecapp.entity.Category;
-import com.iuh.ecapp.entity.Discount;
+import com.iuh.ecapp.model.entity.Brand;
+import com.iuh.ecapp.model.entity.Category;
+import com.iuh.ecapp.model.entity.Discount;
 import java.util.Date;
 import java.util.List;
 

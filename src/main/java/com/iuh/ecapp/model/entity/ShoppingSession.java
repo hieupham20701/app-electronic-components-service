@@ -1,39 +1,39 @@
-package com.iuh.ecapp.entity;
+package com.iuh.ecapp.model.entity;
 
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "discount")
-public class Discount {
+@Table(name = "shopping_session")
+public class ShoppingSession {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "name")
-	private String name;
-	@Column(name = "description")
-	private String description;
-	@Column(name = "discount_percent")
-	private double discountPercent;
-	@Column(name = "create_date")
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	@Column(name = "created_date")
 	private Date createdDate;
 	@Column(name = "modified_date")
 	private Date modifiedDate;
 
-	@OneToMany(mappedBy = "discount", cascade = CascadeType.ALL)
-	private List<Product> products;
+	@OneToMany(mappedBy = "shoppingSession")
+	private List<CartDetail> cartDetails;
 
-	public Discount() {
+	public ShoppingSession() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -45,28 +45,12 @@ public class Discount {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public User getUser() {
+		return user;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public double getDiscountPercent() {
-		return discountPercent;
-	}
-
-	public void setDiscountPercent(double discountPercent) {
-		this.discountPercent = discountPercent;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Date getCreatedDate() {

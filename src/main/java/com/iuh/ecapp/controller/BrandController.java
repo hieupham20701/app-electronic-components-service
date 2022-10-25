@@ -2,7 +2,7 @@ package com.iuh.ecapp.controller;
 
 import com.iuh.ecapp.converter.ConvertBrandDTO;
 import com.iuh.ecapp.dto.BrandDTO;
-import com.iuh.ecapp.entity.Brand;
+import com.iuh.ecapp.model.entity.Brand;
 import com.iuh.ecapp.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

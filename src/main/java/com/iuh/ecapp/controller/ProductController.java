@@ -2,10 +2,9 @@ package com.iuh.ecapp.controller;
 
 import com.iuh.ecapp.converter.ConvertProductDTO;
 import com.iuh.ecapp.dto.ProductDTO;
-import com.iuh.ecapp.entity.Image;
-import com.iuh.ecapp.entity.Product;
+import com.iuh.ecapp.model.entity.Image;
+import com.iuh.ecapp.model.entity.Product;
 import com.iuh.ecapp.service.ProductService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

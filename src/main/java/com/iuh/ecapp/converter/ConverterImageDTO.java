@@ -1,9 +1,7 @@
 package com.iuh.ecapp.converter;
 
 import com.iuh.ecapp.dto.ImageDTO;
-import com.iuh.ecapp.entity.Image;
-import com.iuh.ecapp.repository.ImageRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.iuh.ecapp.model.entity.Image;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
