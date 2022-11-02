@@ -1,11 +1,18 @@
 package com.iuh.ecapp.dto.request;
 
 import com.iuh.ecapp.model.enums.UserRole;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
-
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRequest {
-    private String userName;
+    private String username;
 
     private String password;
 

@@ -1,9 +1,9 @@
 package com.iuh.ecapp.exceptions.global;
 
 
-import com.tindy.app.dto.respone.ErrorRespone;
-import com.tindy.app.exceptions.ForbiddenException;
-import com.tindy.app.exceptions.ResourceNotFoundException;
+import com.iuh.ecapp.dto.response.ErrorRespone;
+import com.iuh.ecapp.exceptions.ForbiddenException;
+import com.iuh.ecapp.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -26,7 +26,7 @@ import static org.springframework.http.HttpMethod.POST;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-public class SercurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailsService userDetailsService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final AuthService authService;

@@ -31,7 +31,7 @@ public class JWTTokenCreator {
                 returnToken = JWT.create()
                         .withClaim("userId", user.getId())
                         .withClaim("name", user.getFirstName()+" "+user.getLastName())
-                        .withClaim("phone", user.getUserName())
+                        .withClaim("username", user.getUsername())
                         .withIssuedAt(new Date(System.currentTimeMillis()))
                         .withExpiresAt(new Date(System.currentTimeMillis() +100*60*1000)) //changed it to make lifetime of access token is longer
                         .withClaim("roles", new ArrayList<>(rolesOfUser))
@@ -43,7 +43,7 @@ public class JWTTokenCreator {
                 returnToken = JWT.create()
                         .withClaim("userId", user.getId())
                         .withClaim("name", user.getFirstName()+" "+user.getLastName())
-                        .withClaim("phone", user.getUserName())
+                        .withClaim("username", user.getUsername())
                         .withClaim("roles", new ArrayList<>(rolesOfUser))
                         .withIssuedAt(new Date(System.currentTimeMillis()))
                         .withExpiresAt(new Date(System.currentTimeMillis() +3000*60*1000))

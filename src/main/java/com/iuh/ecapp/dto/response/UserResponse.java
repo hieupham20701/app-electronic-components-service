@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class UserResponse {
     private int id;
-    private String userName;
+    private String username;
 
 
     private String firstName;

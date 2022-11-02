@@ -55,8 +55,9 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
             Map<String, Object> tokens = new HashMap<>();
             tokens.put("name", userResponse.getFirstName() + " "+ userResponse.getLastName());
+            tokens.put("username", userResponse.getUsername());
             tokens.put("userId", userResponse.getId());
-            tokens.put("phone", userResponse.getTelephone());
+            tokens.put("telephone", userResponse.getTelephone());
             tokens.put("avatar", userResponse.getAvatar());
             tokens.put("loginDate", new Date());
             tokens.put("accessToken", access_token);
@@ -76,7 +77,7 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
-        response.setHeader("error", "Phone number or password is wrong!");
+        response.setHeader("error", "Username or password is wrong!");
         response.setStatus(HttpStatus.FORBIDDEN.value());
         Map<String, String> error = new HashMap<>();
         error.put("error_message", failed.getMessage());
