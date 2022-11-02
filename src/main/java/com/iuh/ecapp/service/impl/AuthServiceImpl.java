@@ -41,6 +41,11 @@ public class AuthServiceImpl implements AuthService, UserDetailsService {
     }
 
     @Override
+    public User getUserById(Integer id) {
+        return userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("User not exist"));
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findUserByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found!"));
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();

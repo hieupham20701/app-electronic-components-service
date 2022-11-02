@@ -7,4 +7,5 @@ import com.iuh.ecapp.model.entity.User;
 public interface AuthService {
     User getUser(String userName);
     UserResponse register(UserRequest userRequest);
+    User getUserById(Integer id);
 }
